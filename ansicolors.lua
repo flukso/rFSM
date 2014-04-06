@@ -23,7 +23,7 @@ local tostring = tostring
 local setmetatable = setmetatable
 local schar = string.char
 
-module 'ansicolors'
+module "rfsm.ansicolors"
 
 local colormt = {}
 

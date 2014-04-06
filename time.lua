@@ -6,7 +6,7 @@
 
 local math = math
 
-module("time")
+module("rfsm.time")
 
 -- constants
 local ns_per_s = 1000000000

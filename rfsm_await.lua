@@ -10,17 +10,17 @@
 --
 
 local rfsm = require "rfsm"
-local utils = require "utils"
+local utils = require "rfsm.utils"
 local string, print, ipairs, pairs = string, print, ipairs, pairs
 local get_sta_mode = rfsm.get_sta_mode
 
-module("rfsm_await")
+module("rfsm.await")
 
 --- Pre-process await and setup handlers.
 -- @param fsm initalized root fsm.
 local function expand_await(fsm)
 
-   fsm.info("rfsm_await: await extension loaded")
+   fsm.info("rfsm.await: await extension loaded")
 
    --- check and parse an await spec.
    -- @returns a table of await events or false if event is not an

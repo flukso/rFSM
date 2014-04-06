@@ -35,12 +35,12 @@
 --
 
 local rfsm = require ("rfsm")
-local utils = require ("utils")
+local utils = require ("rfsm.utils")
 local pcall = pcall
 local tostring = tostring
 local print = print -- debugging only
 
-module("rfsm_marsh")
+module("rfsm.marsh")
 
 -- shortcuts
 local mapfsm = rfsm.mapfsm

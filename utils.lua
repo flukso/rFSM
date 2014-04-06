@@ -6,7 +6,7 @@
 local type, pairs, ipairs, setmetatable, getmetatable, assert, table, print, tostring, string, io, unpack, error =
    type, pairs, ipairs, setmetatable, getmetatable, assert, table, print, tostring, string, io, unpack, error
 
-module('utils')
+module('rfsm.utils')
 
 -- increment major on API breaks
 -- increment minor on non breaking changes

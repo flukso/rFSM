@@ -34,17 +34,15 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --
 
-require "time"
-require "rfsm"
+local time = require "rfsm.time"
+local rfsm = require "rfsm"
 
-local utils=require("utils")
+local utils = require "rfsm.utils"
 local assert = assert
 local type = type
 local tonumber = tonumber
 local math = math
 local string = string
-local rfsm = rfsm
-local time = time
 local ts2str = time.ts2str
 
 --- This module extends the core rFSM model with time events.
@@ -77,7 +75,7 @@ local ts2str = time.ts2str
 -- and (possibly) generates the time event. A "master" timeevent check
 -- function (check_act_timeevents) calls all check_ handlers of the
 -- current active states during post_step_hook.
-module 'rfsm_timeevent'
+module "rfsm.timeevent"
 
 local gettime = false
 debug=false
@@ -98,7 +96,7 @@ end
 -- @param sendf function to call for sending events
 local function gen_rel_timeevent_mgr(name, timespec, sendf, fsm)
    assert(type(gettime) == 'function',
-	  "rfsm_timeevent error. Failed to install handlers: no gettime function set.")
+	  "rfsm.timeevent error. Failed to install handlers: no gettime function set.")
 
    local ts = { sec=math.floor(timespec), nsec=((timespec%1)*100000000) }
    local tend = { sec=false, nsec=false }
@@ -132,7 +130,7 @@ end
 local function expand_timeevent(fsm)
    local function se(...) rfsm.send_events(fsm, ...) end
 
-   fsm.info("rfsm_timeevent: time-event extension loaded")
+   fsm.info("rfsm.timeevent: time-event extension loaded")
 
    rfsm.mapfsm(function (tr, p)
 		  if not tr.events then return end

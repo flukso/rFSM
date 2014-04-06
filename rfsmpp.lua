@@ -37,16 +37,13 @@
 -- Various pretty printing functions to make life easier
 --
 
-require("ansicolors")
-require("utils")
-require("rfsm")
+local ac = require("rfsm.ansicolors")
+local utils = require("rfsm.utils")
+local rfsm = require("rfsm")
 
 local unpack, print, type, pairs, assert = unpack, print, type, pairs, assert
 local table = table
-local utils = utils
 local string = string
-local ac = ansicolors
-local rfsm = rfsm
 
 -- some shortcuts
 local is_meta = rfsm.is_meta
@@ -56,7 +53,7 @@ local is_composite = rfsm.is_composite
 local sta_mode = rfsm.sta_mode
 local fsmobj_tochar = rfsm.fsmobj_tochar
 
-module("rfsmpp")
+module("rfsm.pp")
 
 
 local pad = 20

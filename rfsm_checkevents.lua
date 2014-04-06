@@ -5,7 +5,7 @@
 -- otherwise.
 --
 
-module("rfsm_checkevents", package.seeall)
+module("rfsm.checkevents", package.seeall)
 
 local function setup_checkevents(fsm)
 
@@ -17,7 +17,7 @@ local function setup_checkevents(fsm)
       end
    end
 
-   fsm.info("rfsm_checkevents: checkevents extension loaded")
+   fsm.info("rfsm.checkevents: checkevents extension loaded")
 
    -- build list of known events   
    local known_events = {

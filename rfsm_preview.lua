@@ -11,7 +11,7 @@ local print, ipairs, pairs, error, type = print, ipairs, pairs, error, type
 
 local actchild_get = rfsm.actchild_get
 
-module 'rfsm_preview'
+module "rfsm.preview"
 
 local function do_preview(fsm)
    local function preview_otrs(state)
@@ -36,7 +36,7 @@ end
 --- Setup preview coordination.
 -- @param fsm initialized root fsm.
 local function setup_preview(fsm)
-   fsm.info("rfsm_preview: discrete preview extension loaded")
+   fsm.info("rfsm.preview: discrete preview extension loaded")
    
    rfsm.mapfsm(function (tr)
 		  if tr.likely and type(tr.likely) ~= 'function' then

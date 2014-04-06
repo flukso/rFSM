@@ -17,7 +17,7 @@ local rfsm = require("rfsm")
 local print, ipairs, pairs = print, ipairs, pairs
 
 
-module 'rfsm_emem'
+module "rfsm.emem"
 
 --- Reset the event memory of a state
 -- @param state the state of which memory shall be cleared.
@@ -50,7 +50,8 @@ end
 -- @param fsm initialized root fsm.
 local function setup_emem(fsm)
 
-   fsm.info("rfsm_emem: event memory extension loaded")
+   fsm.info("rfsm.emem: event memory extension loaded")
+
 
    -- create emem tables
    rfsm.mapfsm(function (s, p)
